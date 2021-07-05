@@ -1,10 +1,12 @@
+package SeleniumPractice;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import static org.testng.Assert.*;
 
-public class SignUpAndLogin {
+public class SeleniumPractice1 {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -47,7 +49,7 @@ public class SignUpAndLogin {
 
         // 7. In the left navigation bar, verify that your username (first+lastname)
         // is the combination of the same first and last name that you used when signing up.
-        assertTrue(driver.getPageSource().contains("Mickey Mouse")); // ???
+        assertTrue(driver.getPageSource().contains("Mickey Mouse"));
 
         // 8. Click on the username on the left navigation bar and verify the username on the main
         // window is correct and then click logout.
@@ -65,6 +67,7 @@ public class SignUpAndLogin {
         String actualUrl2 = driver.getCurrentUrl();
         assertTrue(actualUrl2.contains("http://duotifyapp.us-east-2.elasticbeanstalk.com/register.php"));
         Thread.sleep(2000);
+
         // 10. Login using the same username and password when you signed up.
         driver.findElement(By.id("loginUsername")).sendKeys(username);
         driver.findElement(By.id("loginPassword")).sendKeys("Mick3y55" + Keys.ENTER);
@@ -78,9 +81,11 @@ public class SignUpAndLogin {
 
         driver.findElement(By.id("nameFirstAndLast")).click();
         Thread.sleep(2000);
-        driver.findElement(By.id("rafael")).click();
+        driver.findElement(By.id("rafael")).click(); //a[.='Contacts'] -> Xpath //p[@class='paragraph-big']
+        //p[contains(text(), 'Business Systems Analyst and')]
 
         driver.quit();
+
 
 
 
